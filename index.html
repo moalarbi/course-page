@@ -78,12 +78,39 @@
     }
     .offer-card {
       background: #1A1232;
-      border: 2px solid transparent;
-      background-image: linear-gradient(#1A1232, #1A1232), linear-gradient(135deg, #6C3CE1, #EC4899);
+      border: 3px solid transparent;
+      background-image: linear-gradient(#1A1232, #1A1232), linear-gradient(135deg, #6C3CE1, #A855F7, #EC4899);
       background-origin: border-box;
       background-clip: padding-box, border-box;
-      box-shadow: 0 0 30px rgba(108, 60, 225, 0.18);
+      box-shadow: 0 0 50px rgba(108, 60, 225, 0.25);
       position: relative;
+    }
+    .badge-top-vip {
+      background: linear-gradient(90deg, #F59E0B, #EF4444);
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    }
+    .badge-most-requested {
+      background: #FDE68A;
+      color: #000;
+      font-weight: 800;
+    }
+    .vip-text {
+      color: #F59E0B;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    .price-gradient {
+      color: #FDE68A;
+      font-weight: 900;
+    }
+    .cta-vip-btn {
+      background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+      transition: all 0.3s ease;
+    }
+    .cta-vip-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.5);
     }
     .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
     .accordion-item.open .accordion-content { max-height: 420px; }
@@ -219,22 +246,63 @@
     <section id="offer" class="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
       <div class="orb w-64 sm:w-96 h-64 sm:h-96 bg-primary opacity-15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
       <div class="max-w-xl mx-auto relative z-10">
-        <div class="flex justify-center mb-[-16px] sm:mb-[-20px] relative z-20"><div class="badge-offer text-white text-xs sm:text-sm font-bold px-6 sm:px-8 py-2 sm:py-2.5 rounded-full flex items-center gap-2">🔥 وفّر 50% — عرض الإطلاق</div></div>
-        <div class="offer-card rounded-2xl sm:rounded-3xl p-6 sm:p-12 reveal">
+        <!-- Top Badge -->
+        <div class="flex justify-center mb-[-18px] relative z-20">
+          <div class="badge-top-vip text-white text-xs sm:text-sm font-bold px-8 py-2.5 rounded-full flex items-center gap-2">
+            🔥 وفّر 50% — عرض حصري
+          </div>
+        </div>
+        
+        <div class="offer-card rounded-[40px] p-8 sm:p-14 reveal">
           <div class="text-center">
-            <div class="flex items-center justify-end gap-2 mb-6"><div class="bg-[#F59E0B] text-black text-[10px] font-black px-3 py-1 rounded-full">منتج واحد فقط</div></div>
-            <h2 class="section-heading text-3xl md:text-4xl text-white mb-2">الكورس الكامل</h2>
-            <p class="text-purple-300 text-sm sm:text-lg mb-8 sm:mb-12">كل ما تحتاجه لتبدأ تسويق متجرك بشكل عملي وواضح</p>
-            <div class="flex items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12"><div class="text-gray-500 line-through text-lg sm:text-2xl">199</div><div class="flex items-baseline gap-1 sm:gap-2"><span class="text-purple-400 text-base sm:text-xl font-bold">ر.س</span><span class="text-5xl sm:text-8xl font-black text-[#F59E0B]">89</span></div></div>
-            <ul class="space-y-4 sm:space-y-6 mb-10 sm:mb-16 text-right max-w-xs mx-auto">
-              <li class="flex items-center justify-end gap-3 sm:gap-4 text-white font-medium text-sm sm:text-base"><span class="text-[#F59E0B] text-lg sm:text-xl">★</span><span>الكورس كامل 60 دقيقة</span></li>
-              <li class="flex items-center justify-end gap-3 sm:gap-4 text-white font-medium text-sm sm:text-base"><span class="text-[#F59E0B] text-lg sm:text-xl">★</span><span>7 محاور تنفيذية واضحة</span></li>
-              <li class="flex items-center justify-end gap-3 sm:gap-4 text-white font-medium text-sm sm:text-base"><span class="text-[#F59E0B] text-lg sm:text-xl">★</span><span>قوالب وأمثلة عملية</span></li>
-              <li class="flex items-center justify-end gap-3 sm:gap-4 text-white font-medium text-sm sm:text-base"><span class="text-[#F59E0B] text-lg sm:text-xl">★</span><span>وصول دائم للمحتوى</span></li>
-              <li class="flex items-center justify-end gap-3 sm:gap-4 text-white font-medium text-sm sm:text-base"><span class="text-[#F59E0B] text-lg sm:text-xl">★</span><span>ضمان استرداد 14 يوم</span></li>
+            <!-- VIP & Most Requested Badge -->
+            <div class="flex items-center justify-end gap-3 mb-8">
+              <div class="badge-most-requested text-[10px] sm:text-xs px-4 py-1.5 rounded-full">الأكثر طلباً</div>
+              <span class="vip-text text-lg sm:text-xl">VIP</span>
+            </div>
+
+            <h2 class="section-heading text-4xl sm:text-6xl text-white mb-3">التطبيق الفوري</h2>
+            <p class="text-purple-300 text-base sm:text-xl mb-12">للمتعجلين بالطلبات الحقيقية</p>
+
+            <!-- Price Area -->
+            <div class="flex items-center justify-center gap-4 sm:gap-6 mb-14">
+              <div class="flex flex-col items-center">
+                <div class="text-gray-500 line-through text-xl sm:text-3xl opacity-60">199</div>
+                <span class="text-purple-400 text-sm sm:text-base font-bold">ر.س</span>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-7xl sm:text-9xl font-black price-gradient">89</span>
+              </div>
+            </div>
+
+            <!-- Features List -->
+            <ul class="space-y-6 mb-16 text-right max-w-xs mx-auto">
+              <li class="flex items-center justify-end gap-4 text-white font-bold text-base sm:text-xl">
+                <span>كل مميزات Pro</span>
+                <span class="text-[#F59E0B] text-xl">★</span>
+              </li>
+              <li class="flex items-center justify-end gap-4 text-white font-bold text-base sm:text-xl">
+                <span>جلسة 1-1 مع المدرب</span>
+                <span class="text-[#F59E0B] text-xl">★</span>
+              </li>
+              <li class="flex items-center justify-end gap-4 text-white font-bold text-base sm:text-xl">
+                <span>دعم واتساب 60 يوم</span>
+                <span class="text-[#F59E0B] text-xl">★</span>
+              </li>
+              <li class="flex items-center justify-end gap-4 text-white font-bold text-base sm:text-xl">
+                <span>مراجعة استراتيجيتك</span>
+                <span class="text-[#F59E0B] text-xl">★</span>
+              </li>
+              <li class="flex items-center justify-end gap-4 text-white font-bold text-base sm:text-xl">
+                <span>ضمان استرداد 14 يوم</span>
+                <span class="text-[#F59E0B] text-xl">★</span>
+              </li>
             </ul>
-            <a href="https://wa.me/966500000000?text=أريد%20الاشتراك%20في%20كورس%20متجرك%20يبيع%20بالعرض%20الخاص" target="_blank" class="cta-btn block w-full bg-cta-gradient text-black font-black text-xl sm:text-2xl py-4 sm:py-6 rounded-xl sm:rounded-2xl shadow-[0_10px_30px_rgba(245,158,11,0.3)]">احجز الآن ⚡</a>
-            <p class="text-purple-400 text-xs sm:text-sm mt-4 sm:mt-5">الدورة منتج واحد فقط — ليست باقات متعددة</p>
+
+            <!-- CTA Button -->
+            <a href="https://wa.me/966500000000?text=أريد%20الاشتراك%20في%20كورس%20متجرك%20يبيع%20بالعرض%20الخاص" target="_blank" class="cta-vip-btn flex items-center justify-center gap-3 w-full text-black font-black text-2xl sm:text-4xl py-6 sm:py-8 rounded-[25px]">
+              احجز الآن <span class="text-2xl sm:text-4xl">⚡</span>
+            </a>
           </div>
         </div>
       </div>
