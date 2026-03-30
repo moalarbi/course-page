@@ -195,6 +195,29 @@
       </div>
     </section>
 
+    <!-- Coupon Section -->
+    <section class="py-12 px-4 sm:px-6">
+      <div class="max-w-md mx-auto reveal">
+        <div class="bg-white rounded-[32px] p-8 text-center border-2 border-primary relative overflow-hidden">
+          <p class="text-gray-500 font-bold mb-2">كود الخصم</p>
+          <div class="text-5xl font-black text-primary tracking-widest mb-4">Dis50</div>
+          <p class="text-gray-400 text-sm mb-6">انسخ الكود واستخدمه عند الشراء</p>
+          <button onclick="copyCoupon()" class="w-full bg-accent text-black font-black py-4 rounded-2xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2">
+            <span>نسخ الكود</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+          </button>
+          <p class="text-primary font-bold text-xs mt-4">استخدم كود الخصم عند الدفع</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function copyCoupon() {
+        navigator.clipboard.writeText('Dis50');
+        alert('تم نسخ كود الخصم: Dis50');
+      }
+    </script>
+
     <section id="offer" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       <div class="orb w-96 h-96 bg-primary opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
       <div class="max-w-xl mx-auto relative z-10">
