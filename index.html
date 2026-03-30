@@ -45,13 +45,48 @@
           },
           animation: { 
             float: 'float 6s ease-in-out infinite',
-            glow: 'glow 3s ease-in-out infinite'
+            glow: 'glow 3s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            'shine-sweep': 'shine-sweep 3s ease-in-out infinite',
+            'attention-shake': 'attention-shake 5s ease-in-out infinite'
+          },
+          keyframes: {
+            'pulse-glow': {
+              '0%, 100%': { boxShadow: '0 0 15px rgba(245, 158, 11, 0.4), 0 0 30px rgba(245, 158, 11, 0.2)' },
+              '50%': { boxShadow: '0 0 35px rgba(245, 158, 11, 0.7), 0 0 60px rgba(245, 158, 11, 0.4)' }
+            },
+            'shine-sweep': {
+              '0%': { left: '-100%' },
+              '20%, 100%': { left: '100%' }
+            },
+            'attention-shake': {
+              '0%, 90%, 100%': { transform: 'scale(1)' },
+              '92%': { transform: 'scale(1.05) rotate(1deg)' },
+              '94%': { transform: 'scale(1.05) rotate(-1deg)' },
+              '96%': { transform: 'scale(1.05) rotate(1deg)' },
+              '98%': { transform: 'scale(1.05) rotate(0deg)' }
+            }
           }
         }
       }
     };
   </script>
   <style>
+    .cta-vip-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-vip-btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: rotate(25deg);
+      animation: shine-sweep 4s infinite;
+    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -221,8 +256,8 @@
               </div>
             </div>
 <!-- Features list removed for simple closing section -->
-            <a href="https://wa.me/966500000000?text=أريد%20الاشتراك%20في%20كورس%20متجرك%20يبيع%20بـ%2089%20ريال" class="cta-vip-btn flex items-center justify-center gap-3 w-full text-black font-black text-xl sm:text-4xl py-6 sm:py-8 rounded-[25px] text-center leading-tight">
-              <span class="px-4">احصل على الدورة من هنا</span>
+            <a href="https://wa.me/966500000000?text=أريد%20الاشتراك%20في%20كورس%20متجرك%20يبيع%20بـ%2089%20ريال" class="cta-vip-btn flex items-center justify-center gap-3 w-full text-black font-black text-xl sm:text-4xl py-6 sm:py-8 rounded-[25px] text-center leading-tight animate-pulse-glow animate-attention-shake">
+              <span class="px-4 relative z-10">احصل على الدورة من هنا ⚡</span>
             </a>
           </div>
         </div>
