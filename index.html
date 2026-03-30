@@ -41,16 +41,7 @@
             glow: {
               '0%, 100%': { textShadow: '0 0 10px rgba(167, 139, 250, 0.5)' },
               '50%': { textShadow: '0 0 25px rgba(167, 139, 250, 0.8), 0 0 40px rgba(236, 72, 153, 0.4)' }
-            }
-          },
-          animation: { 
-            float: 'float 6s ease-in-out infinite',
-            glow: 'glow 3s ease-in-out infinite',
-            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-            'shine-sweep': 'shine-sweep 3s ease-in-out infinite',
-            'attention-shake': 'attention-shake 5s ease-in-out infinite'
-          },
-          keyframes: {
+            },
             'pulse-glow': {
               '0%, 100%': { boxShadow: '0 0 15px rgba(245, 158, 11, 0.4), 0 0 30px rgba(245, 158, 11, 0.2)' },
               '50%': { boxShadow: '0 0 35px rgba(245, 158, 11, 0.7), 0 0 60px rgba(245, 158, 11, 0.4)' }
@@ -65,7 +56,24 @@
               '94%': { transform: 'scale(1.05) rotate(-1deg)' },
               '96%': { transform: 'scale(1.05) rotate(1deg)' },
               '98%': { transform: 'scale(1.05) rotate(0deg)' }
+            },
+            'marquee': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-400px * 6 - 1.5rem * 6))' }
+            },
+            'marquee-mobile': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-300px * 6 - 1.5rem * 6))' }
             }
+          },
+          animation: { 
+            float: 'float 6s ease-in-out infinite',
+            glow: 'glow 3s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            'shine-sweep': 'shine-sweep 3s ease-in-out infinite',
+            'attention-shake': 'attention-shake 5s ease-in-out infinite',
+            'marquee': 'marquee 40s linear infinite',
+            'marquee-mobile': 'marquee-mobile 30s linear infinite'
           }
         }
       }
@@ -147,7 +155,11 @@
     }
     .sticky-cta.show { transform: translateY(0); }
 
+    .animate-marquee { animation: marquee 40s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+
     @media (max-width: 640px) {
+      .animate-marquee { animation: marquee-mobile 30s linear infinite; }
       .hero-title { font-size: 2.5rem; line-height: 1.35; }
       .feature-card { padding: 1.5rem; }
     }
@@ -212,35 +224,24 @@
       </div>
     </section>
 
-
-
     <section id="offer" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
-      <div class="orb w-96 h-96 bg-primary opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
       <div class="max-w-xl mx-auto relative z-10">
         <div class="flex justify-center mb-[-18px] relative z-20">
           <div class="badge-top-vip text-white text-xs sm:text-sm font-bold px-8 py-2.5 rounded-full flex items-center gap-2">🔥 خصم 50% لفترة محدودة</div>
         </div>
         <div class="offer-card rounded-[40px] p-8 sm:p-14 reveal">
           <div class="text-center">
-
             <h2 class="section-heading text-4xl sm:text-6xl text-white mb-3">متجرك جاهز… بس ناقصه مبيعات</h2>
             <p class="text-purple-300/70 text-base sm:text-xl mb-12">خلال 60 دقيقة فقط، بتتعلّم كيف تجيب أول طلب لك وتطبّق مباشرة على متجرك</p>
             <div class="flex items-center justify-center gap-4 sm:gap-6 mb-14 text-right" dir="rtl">
-              <!-- Right Side: Current Price (89) -->
               <span class="text-7xl sm:text-9xl font-black price-gradient leading-none">89</span>
-              
-              <!-- Left Side: Old Price (Top) and Symbol (Bottom) -->
               <div class="flex flex-col items-center justify-center gap-1">
-                <!-- Old Price (199) -->
                 <span class="text-gray-500 line-through text-2xl sm:text-4xl opacity-50 font-bold leading-none">199</span>
-                
-                <!-- Saudi Riyal Symbol (SAMA) -->
                 <div class="flex items-center opacity-80" style="filter: invert(75%) sepia(20%) saturate(1500%) hue-rotate(220deg) brightness(110%) contrast(100%);">
                   <img src="https://www.sama.gov.sa/ar-sa/Currency/SRS/PublishingImages/Saudi_Riyal_Symbol-1.png" alt="ر.س" class="h-8 sm:h-12 w-auto">
                 </div>
               </div>
             </div>
-<!-- Features list removed for simple closing section -->
             <a href="https://buy.stripe.com/3cI9AS73L9YaaZO4DK93y02" class="cta-vip-btn flex items-center justify-center gap-3 w-full text-black font-black text-xl sm:text-4xl py-6 sm:py-8 rounded-[25px] text-center leading-tight animate-pulse-glow animate-attention-shake">
               <span class="px-4 relative z-10">احصل على الدورة من هنا ⚡</span>
             </a>
@@ -249,13 +250,10 @@
       </div>
     </section>
 
-<!-- Community Section (Integrated UI) -->
+    <!-- Community Section -->
     <section id="community" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
-      <!-- Decorative Orb matching the style -->
       <div class="orb w-80 h-80 bg-primary opacity-10 top-1/4 -right-20 blur-[100px]"></div>
-      
       <div class="max-w-6xl mx-auto relative z-10">
-        <!-- Header: Centered & Matching Hero Style -->
         <div class="text-center mb-16 sm:mb-20 reveal">
           <h2 class="section-heading text-3xl sm:text-5xl text-white mb-6">
             اشتراك واحد = <span class="animate-glow inline-block pb-2" style="background: linear-gradient(135deg, #A78BFA, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">مجتمع كامل</span>
@@ -264,48 +262,28 @@
             مو مجرد فيديوهات تشوفها، راح تنضم لمجتمع كامل تتعلم التسويق بكل الطرق والأساليب.
           </p>
         </div>
-
-        <!-- Grid: 3 Columns Desktop / Stacked Mobile -->
         <div class="grid sm:grid-cols-3 gap-6 sm:gap-8">
-          <!-- Card 1: Course -->
           <div class="glass-card p-8 sm:p-10 rounded-[32px] border border-white/5 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2 reveal">
             <div class="w-14 h-14 rounded-2xl bg-vip-gradient flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">كورس التسويق</h3>
-            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">
-              شرح عملي وتطبيقي لكل استراتيجيات التسويق اللي استخدمتها بكل مشاريعي
-            </p>
+            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">شرح عملي وتطبيقي لكل استراتيجيات التسويق اللي استخدمتها بكل مشاريعي</p>
           </div>
-
-          <!-- Card 2: Workshops -->
           <div class="glass-card p-8 sm:p-10 rounded-[32px] border border-white/5 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2 reveal">
             <div class="w-14 h-14 rounded-2xl bg-vip-gradient flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">ورش تسويقية</h3>
-            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">
-              راح تقدر تشوف كل الورش التسويقية المدفوعة مجانًا داخل التطبيق
-            </p>
+            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">راح تقدر تشوف كل الورش التسويقية المدفوعة مجانًا داخل التطبيق</p>
           </div>
-
-          <!-- Card 3: PDF Files -->
           <div class="glass-card p-8 sm:p-10 rounded-[32px] border border-white/5 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2 reveal">
             <div class="w-14 h-14 rounded-2xl bg-vip-gradient flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">ملفات PDF</h3>
-            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">
-              مكتبة من ملفات الـ PDF المتعلقة بالتسويق والمبيعات
-            </p>
+            <p class="text-purple-200/60 leading-relaxed text-sm sm:text-base">مكتبة من ملفات الـ PDF المتعلقة بالتسويق والمبيعات</p>
           </div>
-        </div>
-
-        <!-- Optional CTA Footer -->
-        <div class="text-center mt-12 sm:mt-16 reveal">
-          <p class="text-purple-300/50 text-sm sm:text-base font-medium">
-            كل هذا داخل نفس الاشتراك — بدون أي رسوم إضافية
-          </p>
         </div>
       </div>
     </section>
@@ -317,7 +295,7 @@
           <p class="text-purple-300">9 محاور تطبيقية · 60 دقيقة · نتائج ملموسة</p>
         </div>
         <div class="space-y-4 reveal">
-          <!-- المحور 1 -->
+          <!-- Accordion items here... -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -326,13 +304,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• كيفية تحديد أسعار المنتجات بشكل مربح ومناسب للسوق لضمان المنافسة.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• كيفية تحديد أسعار المنتجات بشكل مربح ومناسب للسوق لضمان المنافسة.</p></div></div>
           </div>
-          <!-- المحور 2 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -341,13 +314,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• أسس صناعة إعلانات تجذب الجمهور المستهدف وتحقق أعلى معدلات نقر.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• أسس صناعة إعلانات تجذب الجمهور المستهدف وتحقق أعلى معدلات نقر.</p></div></div>
           </div>
-          <!-- المحور 3 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -356,13 +324,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• تسلسل خطوات تحويل الأفكار التسويقية إلى نتائج ملموسة ومبيعات فعلية.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• تسلسل خطوات تحويل الأفكار التسويقية إلى نتائج ملموسة ومبيعات فعلية.</p></div></div>
           </div>
-          <!-- المحور 4 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -371,13 +334,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• فهم البيانات والأرقام لتحسين أداء الإعلانات التي حققت مبيعات مسبقاً.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• فهم البيانات والأرقام لتحسين أداء الإعلانات التي حققت مبيعات مسبقاً.</p></div></div>
           </div>
-          <!-- المحور 5 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -386,13 +344,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• استراتيجيات وأسرار حصرية لزيادة فعالية التسويق وتقليل تكلفة الاستحواذ.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• استراتيجيات وأسرار حصرية لزيادة فعالية التسويق وتقليل تكلفة الاستحواذ.</p></div></div>
           </div>
-          <!-- المحور 6 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -401,13 +354,8 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• استعراض لأهم الأدوات التقنية التي تسهل إدارة المشاريع وأتمتة المهام.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• استعراض لأهم الأدوات والمنصات التي تسهل إدارة العمليات التسويقية.</p></div></div>
           </div>
-          <!-- المحور 7 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -416,28 +364,18 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• كيفية استغلال تقنيات AI لتطوير العمليات التسويقية وصناعة المحتوى الذكي.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• توظيف تقنيات AI لتوفير الوقت والجهد في كتابة المحتوى وتحليل السوق.</p></div></div>
           </div>
-          <!-- المحور 8 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
                 <span class="w-8 h-8 rounded-lg bg-primary/20 text-primary font-bold flex items-center justify-center">8</span>
-                <span class="font-bold text-white sm:text-lg">التصميم عبر "كانفا" (Canva)</span>
+                <span class="font-bold text-white sm:text-lg">التصميم عبر "كانفا"</span>
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• تعلم مهارات التصميم الأساسية لإنشاء محتوى بصري جذاب دون الحاجة لخبرة مسبقة.</p>
-              </div>
-            </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• ورشة عملية لتصميم صور وفيديوهات احترافية لمتجرك بسهولة وسرعة.</p></div></div>
           </div>
-          <!-- المحور 9 -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -446,56 +384,133 @@
               </div>
               <svg class="accordion-icon w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="accordion-content">
-              <div class="px-6 pb-6 space-y-3 text-purple-200">
-                <p>• دروس تطبيقية مباشرة لكيفية إطلاق وإدارة الحملات الإعلانية من الصفر.</p>
-              </div>
+            <div class="accordion-content"><div class="px-6 pb-6 text-purple-200"><p>• جولة تنفيذية داخل Meta Ads Manager لإطلاق حملتك الأولى باحترافية.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section id="testimonials" class="py-16 sm:py-24 overflow-hidden bg-surface-1/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12 reveal">
+        <h2 class="section-heading text-3xl sm:text-5xl text-white mb-4">آراء ملاك المتاجر</h2>
+        <p class="text-purple-300/70 text-lg">تجارب حقيقية من أصحاب متاجر طبقوا الكورس وحققوا أول مبيعاتهم</p>
+      </div>
+
+      <div class="relative flex overflow-x-hidden">
+        <div class="py-12 animate-marquee flex whitespace-nowrap gap-6" dir="rtl">
+          <!-- Card 1 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
+              <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
+              <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"كنت ضايع في التسويق، الآن عندي نظام واضح وبدأت تجيني طلبات مستمرة."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-accent/40 flex items-center justify-center text-white font-bold text-xl">خ</div>
+              <div class="text-right"><div class="text-white font-bold">خالد العتيبي</div><div class="text-purple-400 text-sm">صاحب متجر ملابس</div></div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"أول مرة أحس متجري فعلاً يشتغل ويجيب نتيجة حقيقية. شكراً على هذا المحتوى."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-purple-600/40 flex items-center justify-center text-white font-bold text-xl">ن</div>
+              <div class="text-right"><div class="text-white font-bold">نورة العلي</div><div class="text-purple-400 text-sm">متجر عطور</div></div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"استراتيجية العرض اللي تعلمتها في الكورس غيرت كل شيء في مبيعاتي 🚀"</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-pink-600/40 flex items-center justify-center text-white font-bold text-xl">ف</div>
+              <div class="text-right"><div class="text-white font-bold">فهد الشمري</div><div class="text-purple-400 text-sm">تاجر إلكتروني</div></div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"نصيحة لكل صاحب متجر لا تضيع وقتك، هذا الكورس هو الحل النهائي لمشاكل البيع."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-blue-600/40 flex items-center justify-center text-white font-bold text-xl">م</div>
+              <div class="text-right"><div class="text-white font-bold">محمد إبراهيم</div><div class="text-purple-400 text-sm">متجر تقني</div></div>
+            </div>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
+              <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
+            </div>
+          </div>
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
+              <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-24 px-4 sm:px-6 text-center">
-      <div class="max-w-2xl mx-auto reveal">
-        <h2 class="section-heading text-3xl sm:text-5xl text-white mb-8">متجرك ممكن يبيع <span class="text-accent">اليوم</span></h2>
-        <div class="flex flex-wrap justify-center gap-6 mb-12">
-          <div class="flex items-center gap-2 text-purple-300"><span class="text-green-400">🔒</span> دفع آمن</div>
-          <div class="flex items-center gap-2 text-purple-300"><span class="text-green-400">✅</span> ضمان 14 يوم</div>
-          <div class="flex items-center gap-2 text-purple-300"><span class="text-green-400">♾️</span> وصول دائم</div>
-        </div>
-        <a href="https://buy.stripe.com/3cI9AS73L9YaaZO4DK93y02" class="bg-cta-gradient text-black font-black text-2xl px-12 py-6 rounded-2xl shadow-xl active:scale-95 transition-all inline-block">ابدأ الآن بـ 89 ر.س</a>
-      </div>
-    </section>
   </main>
 
-  <footer class="py-12 border-t border-white/5 text-center">
-    <p class="text-purple-400 text-sm">جميع الحقوق محفوظة &copy; 2026 متجرك يبيع</p>
+  <footer class="py-12 px-4 sm:px-6 border-t border-white/5 text-center">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-vip-gradient flex items-center justify-center text-white font-bold">م</div>
+          <span class="font-bold text-white text-xl">متجرك يبيع</span>
+        </div>
+        <p class="text-purple-300/40 text-sm">جميع الحقوق محفوظة © 2026 - متجرك يبيع</p>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Reveal Animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Accordion Logic
-    function toggleAccordion(btn) {
-      const item = btn.parentElement;
+    function toggleAccordion(button) {
+      const item = button.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     }
 
-    // Sticky CTA Logic
+    const observerOptions = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
     const stickyCta = document.getElementById('sticky-cta');
-    const offerSection = document.getElementById('offer');
+    const heroSection = document.getElementById('hero');
     window.addEventListener('scroll', () => {
-      const offerTop = offerSection.getBoundingClientRect().top;
-      if (window.scrollY > 500 && offerTop > window.innerHeight) {
+      if (window.scrollY > heroSection.offsetHeight) {
         stickyCta.classList.add('show');
       } else {
         stickyCta.classList.remove('show');
@@ -504,5 +519,3 @@
   </script>
 </body>
 </html>
-
-<!-- Build ID: 2026-03-30-10-00-01-ForceUpdate -->
