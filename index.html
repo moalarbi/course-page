@@ -59,7 +59,7 @@
             },
             'marquee': {
               '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(calc(100% + 1.5rem))' }
+              '100%': { transform: 'translateX(50%)' }
             }
           },
           animation: { 
@@ -68,7 +68,7 @@
             'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
             'shine-sweep': 'shine-sweep 3s ease-in-out infinite',
             'attention-shake': 'attention-shake 5s ease-in-out infinite',
-            'marquee': 'marquee 40s linear infinite'
+            'marquee': 'marquee 35s linear infinite'
           }
         }
       }
@@ -150,13 +150,13 @@
     }
     .sticky-cta.show { transform: translateY(0); }
 
-    .animate-marquee { animation: marquee 30s linear infinite; }
+    .animate-marquee { animation: marquee 35s linear infinite; }
     .animate-marquee:hover { animation-play-state: paused; }
 
     @media (max-width: 640px) {
       .hero-title { font-size: 2.5rem; line-height: 1.35; }
       .feature-card { padding: 1.5rem; }
-      .animate-marquee { animation-duration: 20s; }
+      .animate-marquee { animation-duration: 25s; }
     }
   </style>
 </head>
@@ -391,77 +391,109 @@
         <p class="text-purple-300/70 text-lg">تجارب حقيقية من أصحاب متاجر طبقوا الكورس وحققوا أول مبيعاتهم</p>
       </div>
 
-      <div class="relative flex overflow-x-hidden" id="marquee-container">
-        <div class="py-12 animate-marquee flex whitespace-nowrap gap-6" dir="rtl">
-          <!-- Card 1 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
-              <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
+      <div class="relative flex overflow-x-hidden">
+        <!-- Wrapper for Infinite Loop -->
+        <div class="py-12 animate-marquee flex whitespace-nowrap gap-6 w-max" dir="rtl">
+          <!-- Testimonial Cards Group (Group 1) -->
+          <div class="flex gap-6">
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
+                <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
+              </div>
+            </div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
+                <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
+              </div>
+            </div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"كنت ضايع في التسويق، الآن عندي نظام واضح وبدأت تجيني طلبات مستمرة."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/40 flex items-center justify-center text-white font-bold text-xl">خ</div>
+                <div class="text-right"><div class="text-white font-bold">خالد العتيبي</div><div class="text-purple-400 text-sm">صاحب متجر ملابس</div></div>
+              </div>
+            </div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"أول مرة أحس متجري فعلاً يشتغل ويجيب نتيجة حقيقية. شكراً على هذا المحتوى."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-purple-600/40 flex items-center justify-center text-white font-bold text-xl">ن</div>
+                <div class="text-right"><div class="text-white font-bold">نورة العلي</div><div class="text-purple-400 text-sm">متجر عطور</div></div>
+              </div>
+            </div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"استراتيجية العرض اللي تعلمتها في الكورس غيرت كل شيء في مبيعاتي 🚀"</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-pink-600/40 flex items-center justify-center text-white font-bold text-xl">ف</div>
+                <div class="text-right"><div class="text-white font-bold">فهد الشمري</div><div class="text-purple-400 text-sm">تاجر إلكتروني</div></div>
+              </div>
+            </div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"نصيحة لكل صاحب متجر لا تضيع وقتك، هذا الكورس هو الحل النهائي لمشاكل البيع."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-blue-600/40 flex items-center justify-center text-white font-bold text-xl">م</div>
+                <div class="text-right"><div class="text-white font-bold">محمد إبراهيم</div><div class="text-purple-400 text-sm">متجر تقني</div></div>
+              </div>
             </div>
           </div>
-          <!-- Card 2 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
-              <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
+          <!-- Identical Clone (Group 2) for Seamless Transition -->
+          <div class="flex gap-6">
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
+                <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
+              </div>
             </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"كنت ضايع في التسويق، الآن عندي نظام واضح وبدأت تجيني طلبات مستمرة."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-accent/40 flex items-center justify-center text-white font-bold text-xl">خ</div>
-              <div class="text-right"><div class="text-white font-bold">خالد العتيبي</div><div class="text-purple-400 text-sm">صاحب متجر ملابس</div></div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
+                <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
+              </div>
             </div>
-          </div>
-          <!-- Card 4 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"أول مرة أحس متجري فعلاً يشتغل ويجيب نتيجة حقيقية. شكراً على هذا المحتوى."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-purple-600/40 flex items-center justify-center text-white font-bold text-xl">ن</div>
-              <div class="text-right"><div class="text-white font-bold">نورة العلي</div><div class="text-purple-400 text-sm">متجر عطور</div></div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"كنت ضايع في التسويق، الآن عندي نظام واضح وبدأت تجيني طلبات مستمرة."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/40 flex items-center justify-center text-white font-bold text-xl">خ</div>
+                <div class="text-right"><div class="text-white font-bold">خالد العتيبي</div><div class="text-purple-400 text-sm">صاحب متجر ملابس</div></div>
+              </div>
             </div>
-          </div>
-          <!-- Card 5 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"استراتيجية العرض اللي تعلمتها في الكورس غيرت كل شيء في مبيعاتي 🚀"</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-pink-600/40 flex items-center justify-center text-white font-bold text-xl">ف</div>
-              <div class="text-right"><div class="text-white font-bold">فهد الشمري</div><div class="text-purple-400 text-sm">تاجر إلكتروني</div></div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"أول مرة أحس متجري فعلاً يشتغل ويجيب نتيجة حقيقية. شكراً على هذا المحتوى."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-purple-600/40 flex items-center justify-center text-white font-bold text-xl">ن</div>
+                <div class="text-right"><div class="text-white font-bold">نورة العلي</div><div class="text-purple-400 text-sm">متجر عطور</div></div>
+              </div>
             </div>
-          </div>
-          <!-- Card 6 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"نصيحة لكل صاحب متجر لا تضيع وقتك، هذا الكورس هو الحل النهائي لمشاكل البيع."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-blue-600/40 flex items-center justify-center text-white font-bold text-xl">م</div>
-              <div class="text-right"><div class="text-white font-bold">محمد إبراهيم</div><div class="text-purple-400 text-sm">متجر تقني</div></div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"استراتيجية العرض اللي تعلمتها في الكورس غيرت كل شيء في مبيعاتي 🚀"</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-pink-600/40 flex items-center justify-center text-white font-bold text-xl">ف</div>
+                <div class="text-right"><div class="text-white font-bold">فهد الشمري</div><div class="text-purple-400 text-sm">تاجر إلكتروني</div></div>
+              </div>
             </div>
-          </div>
-          <!-- Clone for Loop -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-vip-gradient flex items-center justify-center text-white font-bold">أ</div>
-              <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
-            </div>
-          </div>
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
-            <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
-            <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-xl">س</div>
-              <div class="text-right"><div class="text-white font-bold">سارة الخالد</div><div class="text-purple-400 text-sm">تاجرة مبتدئة</div></div>
+            <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+              <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
+              <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"نصيحة لكل صاحب متجر لا تضيع وقتك، هذا الكورس هو الحل النهائي لمشاكل البيع."</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-blue-600/40 flex items-center justify-center text-white font-bold text-xl">م</div>
+                <div class="text-right"><div class="text-white font-bold">محمد إبراهيم</div><div class="text-purple-400 text-sm">متجر تقني</div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -509,27 +541,6 @@
       } else {
         stickyCta.classList.remove('show');
       }
-    });
-
-    // Mobile swipe support (optional enhancement)
-    const marquee = document.querySelector('.animate-marquee');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    marquee.addEventListener('mousedown', (e) => {
-      isDown = true;
-      marquee.style.animationPlayState = 'paused';
-      startX = e.pageX - marquee.offsetLeft;
-      scrollLeft = marquee.scrollLeft;
-    });
-    marquee.addEventListener('mouseleave', () => {
-      isDown = false;
-      marquee.style.animationPlayState = 'running';
-    });
-    marquee.addEventListener('mouseup', () => {
-      isDown = false;
-      marquee.style.animationPlayState = 'running';
     });
   </script>
 </body>
