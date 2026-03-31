@@ -59,11 +59,7 @@
             },
             'marquee': {
               '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(calc(-400px * 6 - 1.5rem * 6))' }
-            },
-            'marquee-mobile': {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(calc(-300px * 6 - 1.5rem * 6))' }
+              '100%': { transform: 'translateX(calc(100% + 1.5rem))' }
             }
           },
           animation: { 
@@ -72,8 +68,7 @@
             'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
             'shine-sweep': 'shine-sweep 3s ease-in-out infinite',
             'attention-shake': 'attention-shake 5s ease-in-out infinite',
-            'marquee': 'marquee 40s linear infinite',
-            'marquee-mobile': 'marquee-mobile 30s linear infinite'
+            'marquee': 'marquee 40s linear infinite'
           }
         }
       }
@@ -155,13 +150,13 @@
     }
     .sticky-cta.show { transform: translateY(0); }
 
-    .animate-marquee { animation: marquee 40s linear infinite; }
+    .animate-marquee { animation: marquee 30s linear infinite; }
     .animate-marquee:hover { animation-play-state: paused; }
 
     @media (max-width: 640px) {
-      .animate-marquee { animation: marquee-mobile 30s linear infinite; }
       .hero-title { font-size: 2.5rem; line-height: 1.35; }
       .feature-card { padding: 1.5rem; }
+      .animate-marquee { animation-duration: 20s; }
     }
   </style>
 </head>
@@ -295,7 +290,6 @@
           <p class="text-purple-300">9 محاور تطبيقية · 60 دقيقة · نتائج ملموسة</p>
         </div>
         <div class="space-y-4 reveal">
-          <!-- Accordion items here... -->
           <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
             <button class="w-full text-right flex items-center justify-between p-5 sm:p-6" onclick="toggleAccordion(this)">
               <div class="flex items-center gap-4">
@@ -391,16 +385,16 @@
     </section>
 
     <!-- Testimonials Slider -->
-    <section id="testimonials" class="py-16 sm:py-24 overflow-hidden bg-surface-1/20">
+    <section id="testimonials" class="py-16 sm:py-24 overflow-hidden bg-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12 reveal">
         <h2 class="section-heading text-3xl sm:text-5xl text-white mb-4">آراء ملاك المتاجر</h2>
         <p class="text-purple-300/70 text-lg">تجارب حقيقية من أصحاب متاجر طبقوا الكورس وحققوا أول مبيعاتهم</p>
       </div>
 
-      <div class="relative flex overflow-x-hidden">
+      <div class="relative flex overflow-x-hidden" id="marquee-container">
         <div class="py-12 animate-marquee flex whitespace-nowrap gap-6" dir="rtl">
           <!-- Card 1 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
             <div class="flex items-center gap-4">
@@ -409,7 +403,7 @@
             </div>
           </div>
           <!-- Card 2 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
             <div class="flex items-center gap-4">
@@ -418,7 +412,7 @@
             </div>
           </div>
           <!-- Card 3 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"كنت ضايع في التسويق، الآن عندي نظام واضح وبدأت تجيني طلبات مستمرة."</p>
             <div class="flex items-center gap-4">
@@ -427,7 +421,7 @@
             </div>
           </div>
           <!-- Card 4 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"أول مرة أحس متجري فعلاً يشتغل ويجيب نتيجة حقيقية. شكراً على هذا المحتوى."</p>
             <div class="flex items-center gap-4">
@@ -436,7 +430,7 @@
             </div>
           </div>
           <!-- Card 5 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"استراتيجية العرض اللي تعلمتها في الكورس غيرت كل شيء في مبيعاتي 🚀"</p>
             <div class="flex items-center gap-4">
@@ -445,7 +439,7 @@
             </div>
           </div>
           <!-- Card 6 -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"نصيحة لكل صاحب متجر لا تضيع وقتك، هذا الكورس هو الحل النهائي لمشاكل البيع."</p>
             <div class="flex items-center gap-4">
@@ -453,8 +447,8 @@
               <div class="text-right"><div class="text-white font-bold">محمد إبراهيم</div><div class="text-purple-400 text-sm">متجر تقني</div></div>
             </div>
           </div>
-          <!-- Duplicate for seamless loop -->
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <!-- Clone for Loop -->
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"طبقت الخطوات خلال نفس اليوم وجاني أول طلب فعلي 👌 الكورس جداً مباشر وعملي."</p>
             <div class="flex items-center gap-4">
@@ -462,7 +456,7 @@
               <div class="text-right"><div class="text-white font-bold">أحمد م.</div><div class="text-purple-400 text-sm">صاحب متجر إلكتروني</div></div>
             </div>
           </div>
-          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[300px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
+          <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
             <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
             <p class="text-white text-lg mb-6 whitespace-normal leading-relaxed">"الكورس اختصر علي شهور تجربة… بدأت أبيع خلال أيام من إطلاق الحملة الأولى."</p>
             <div class="flex items-center gap-4">
@@ -515,6 +509,27 @@
       } else {
         stickyCta.classList.remove('show');
       }
+    });
+
+    // Mobile swipe support (optional enhancement)
+    const marquee = document.querySelector('.animate-marquee');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    marquee.addEventListener('mousedown', (e) => {
+      isDown = true;
+      marquee.style.animationPlayState = 'paused';
+      startX = e.pageX - marquee.offsetLeft;
+      scrollLeft = marquee.scrollLeft;
+    });
+    marquee.addEventListener('mouseleave', () => {
+      isDown = false;
+      marquee.style.animationPlayState = 'running';
+    });
+    marquee.addEventListener('mouseup', () => {
+      isDown = false;
+      marquee.style.animationPlayState = 'running';
     });
   </script>
 </body>
