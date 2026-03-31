@@ -155,6 +155,69 @@
     }
     .sticky-cta.show { transform: translateY(0); }
 
+    /* Bottom Nav Bar Styles */
+    .bottom-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(150%);
+      z-index: 100;
+      width: 92%;
+      max-width: 500px;
+      background: rgba(18, 10, 42, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(124, 92, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .bottom-nav.show { transform: translateX(-50%) translateY(0); }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      flex: 1;
+      gap: 4px;
+    }
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      transition: transform 0.3s ease;
+    }
+    .nav-item.active {
+      color: #A78BFA;
+      text-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
+    }
+    .nav-item:active { transform: scale(0.9); }
+
+    .nav-cta {
+      background: linear-gradient(90deg, #7c5cff, #ff4ecd);
+      color: white !important;
+      border-radius: 999px;
+      padding: 8px 16px;
+      flex: 1.4;
+      box-shadow: 0 0 12px rgba(124, 92, 255, 0.4);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .nav-cta svg { width: 22px; height: 22px; }
+    
+    @media (min-width: 769px) {
+      .bottom-nav { display: none; }
+    }
+
     .animate-marquee { animation: marquee 35s linear infinite; }
     .animate-marquee:hover { animation-play-state: paused; }
 
@@ -166,14 +229,25 @@
   </style>
 </head>
 <body>
-  <!-- Sticky CTA for Mobile -->
-  <div id="sticky-cta" class="sticky-cta flex items-center justify-between sm:hidden">
-    <div class="flex flex-col">
-      <span class="text-xs text-purple-300">السعر الحالي</span>
-      <span class="text-xl font-black text-accent">89 ر.س</span>
-    </div>
-    <a href="https://buy.stripe.com/3cI9AS73L9YaaZO4DK93y02" class="bg-vip-gradient text-white font-bold px-6 py-3 rounded-xl shadow-lg active:scale-95 transition-all">احجز مقعدك ⚡</a>
-  </div>
+  <!-- Bottom Navigation Bar for Mobile -->
+  <nav id="bottom-nav" class="bottom-nav sm:hidden">
+    <a href="#testimonials" class="nav-item" data-section="testimonials">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      <span>الآراء</span>
+    </a>
+    <a href="#content" class="nav-item" data-section="content">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+      <span>المحتوى</span>
+    </a>
+    <a href="#video" class="nav-item" data-section="video">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+      <span>الفيديو</span>
+    </a>
+    <a href="#offer" class="nav-item nav-cta" data-section="offer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      <span>اشترك الآن</span>
+    </a>
+  </nav>
 
   <main>
     <section id="hero" class="relative pt-12 sm:pt-20 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
@@ -577,13 +651,53 @@
     const stickyCta = document.getElementById('sticky-cta');
     const heroBtn = document.querySelector('#hero a');
     
+    const bottomNav = document.getElementById('bottom-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = ['hero', 'video', 'content', 'offer', 'testimonials'];
+    
     window.addEventListener('scroll', () => {
       const heroBtnRect = heroBtn.getBoundingClientRect();
+      
+      // Show/Hide Nav Bar
       if (heroBtnRect.bottom < 0) {
-        stickyCta.classList.add('show');
+        bottomNav.classList.add('show');
       } else {
-        stickyCta.classList.remove('show');
+        bottomNav.classList.remove('show');
       }
+      
+      // Scroll Spy Logic
+      let currentSection = "";
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentSection = id;
+          }
+        }
+      });
+      
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-section') === currentSection) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth Scroll for Nav Items
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = item.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 20,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 </body>
