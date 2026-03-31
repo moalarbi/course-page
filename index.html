@@ -392,9 +392,7 @@
       </div>
 
       <div class="relative flex overflow-x-hidden">
-        <!-- Wrapper for Infinite Loop -->
         <div class="py-12 animate-marquee flex whitespace-nowrap gap-6 w-max" dir="rtl">
-          <!-- Testimonial Cards Group (Group 1) -->
           <div class="flex gap-6">
             <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
               <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
@@ -445,7 +443,6 @@
               </div>
             </div>
           </div>
-          <!-- Identical Clone (Group 2) for Seamless Transition -->
           <div class="flex gap-6">
             <div class="glass-card p-6 sm:p-8 rounded-[32px] w-[280px] sm:w-[400px] flex-shrink-0 border border-white/5 shadow-xl">
               <div class="flex text-yellow-400 mb-4 gap-1 text-sm">⭐⭐⭐⭐⭐</div>
@@ -500,6 +497,109 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden bg-surface">
+      <div class="orb w-72 h-72 bg-purple-600 opacity-10 -bottom-20 -left-20"></div>
+      <div class="max-w-3xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <h2 class="section-heading text-3xl sm:text-5xl text-white mb-6">أسئلة ممكن توقفك… وهذا جوابها</h2>
+          <p class="text-purple-200/60 text-lg sm:text-xl leading-relaxed">إجابات واضحة على أهم الأشياء اللي يفكر فيها أي صاحب متجر قبل ما يبدأ</p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          <!-- FAQ Item 1 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">هل أحتاج خبرة سابقة بالتسويق؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                لا، الكورس يبدأ معك من الصفر ويوضح لك كل شيء خطوة بخطوة بطريقة مبسطة وعملية جداً.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">هل فعلاً أقدر أجيب أول طلب خلال 60 دقيقة؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                نعم، إذا طبقت الخطوات مباشرة أثناء المشاهدة، راح تقدر تجهز عرضك وتطلق حملتك وتبدأ تشوف نتيجة فعلية في وقت قياسي.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">هل فيه تطبيق عملي داخل الكورس؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                نعم، الكورس تنفيذي بالدرجة الأولى. كل محور فيه تطبيق مباشر على متجرك الشخصي لضمان خروجك بنتيجة ملموسة.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">هل أحتاج ميزانية كبيرة للإعلانات؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                لا، راح تتعلم كيف تبدأ بأقل ميزانية ممكنة وتختبر عروضك ومنتجاتك بشكل ذكي قبل التوسع وزيادة الصرف.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">وش الفرق بين هذا الكورس وغيره؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                الفرق هو "التنفيذ السريع". بدلاً من مئات الساعات النظرية، هذا الكورس يعطيك نظام واضح ومجرب تطبقه فوراً لتبدأ البيع.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="accordion-item glass-card rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+            <button class="w-full text-right flex items-center justify-between p-5 sm:p-7 group" onclick="toggleAccordion(this)">
+              <span class="font-bold text-white sm:text-xl group-hover:text-purple-300 transition-colors">طيب لو ما جبت نتيجة؟</span>
+              <div class="accordion-icon w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content bg-white/[0.02]">
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-purple-100/80 leading-relaxed sm:text-lg">
+                ثقتنا في النظام كبيرة، لذلك نقدم لك ضمان استرداد كامل للمبلغ لمدة 14 يوم إذا شعرت أن الكورس لم يقدم لك القيمة المرجوة، بدون أي تعقيد.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="py-12 px-4 sm:px-6 border-t border-white/5 text-center">
@@ -518,8 +618,14 @@
     function toggleAccordion(button) {
       const item = button.parentElement;
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      
+      // Close all other items (Optional: as per requirement "one open at a time")
+      document.querySelectorAll('.accordion-item').forEach(i => {
+        if (i !== item) i.classList.remove('open');
+      });
+      
+      // Toggle current item
+      item.classList.toggle('open');
     }
 
     const observerOptions = { threshold: 0.15 };
